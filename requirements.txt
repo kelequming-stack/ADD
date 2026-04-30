@@ -1,0 +1,4 @@
+pydantic
+litellm
+python-dotenv
+asyncio
