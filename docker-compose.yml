@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  swarm-orchestrator:
+    build: .
+    environment:
+      - LITELLM_LOG=INFO
+      - LOCAL_MODEL_NAME=ollama/qwen3
+    volumes:
+      - .:/app
+    depends_on:
+      - local-ollama
+  
+  local-ollama:
+    image: ollama/ollama
+    ports:
+      - "11434:11434"
